@@ -12,6 +12,9 @@ the `setup.bash` script and run it.
 > This will install specific software packages using the [apt-get][] package
 > manager and allow you to configure some things along the way. **Make sure you
 > have an internet connection!**
+>
+> Also note that http://tr.im/mini1404 is a shortcut to to
+> https://raw.githubusercontent.com/kenjyco/x200/master/sysinstall/mini-14.04/setup.bash.
 
 # Optional
 
@@ -83,3 +86,17 @@ Add an "AllowUsers" line with a comma-delimited list of users allowed to SSH in
 Restart the SSH server
 
     % sudo service ssh restart
+
+#### Setup PostgreSQL
+[psql 9.4]: http://www.postgresql.org/docs/9.4/static/app-psql.html
+[psycopg2]: http://initd.org/psycopg/
+[SQLAlchemy]: http://www.sqlalchemy.org/
+
+Start [psql 9.4][]  as the `postgres` system user
+
+    % sudo -u postgres psql
+
+> Note: `psql` is the way to interact with PostgreSQL databases on the command
+> line when you're not interacting with it through your programming language
+> via an adapter (like [psycopg2][] for Python) or Object Relational Mapper
+> (like [SQLAlchemy][]).

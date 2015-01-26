@@ -42,3 +42,17 @@ echo -e "\nPython stuff"
 sudo apt-get install -y binutils-multiarch python-dev python-pip
 sudo pip install --upgrade pip
 sudo pip install virtualenv
+
+echo -e "\nPostgreSQL stuff"
+# See: http://www.postgresql.org/download/linux/ubuntu/
+#
+# Create the `/etc/apt/sources.list.d/pgdg.list` file
+sudo su -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+# Import repository signing key and update package lists
+wget -q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+    sudo apt-key add -
+sudo apt-get update
+
+# Finally, install PostgreSQL stuff
+sudo apt-get install -y postgresql-9.4 postgresql-server-dev-9.4 postgresql-plpython-9.4 postgresql-contrib-9.4
