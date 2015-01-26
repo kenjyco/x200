@@ -1,17 +1,24 @@
 # Required
 [mini]: https://help.ubuntu.com/community/Installation/MinimalCD#A64-bit_PC_.28amd64.2C_x86_64.29
 [apt-get]: https://help.ubuntu.com/community/AptGet/Howto
+[dotfiles]: https://github.com/kenjyco/dotfiles
 
 Once you complete the [Ubuntu Mini 14.04][mini] installation (from CD), fetch
 the `setup.bash` script and run it.
 
-    %
+    % wget -q http://tr.im/mini1404
+    % bash ./mini1404
 
 > This will install specific software packages using the [apt-get][] package
 > manager and allow you to configure some things along the way. **Make sure you
 > have an internet connection!**
 
 # Optional
+
+#### Clone [dotfiles][], run setup, and set default shell to zsh
+
+    % git clone https://github.com/kenjyco/dotfiles && bash ./dotfiles/setup.bash
+    % chsh -s $(which zsh)
 
 #### Remove password requirement for using `sudo`
 
