@@ -143,5 +143,5 @@ top. The bottom symbol is the default, so no need to press `Shift`.
 
 For keys that have blue symbols, you need to press the blue `Fn` key (lower left
 area of the keyboard) at the same time to trigger that key's action. For
-example, it is common to use `Fn` + `F10` to quickly "hibernate" the laptop (so
+example, it is common to use `Fn` + `F12` to quickly "hibernate" the laptop (so
 the battery does not drain).
