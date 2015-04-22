@@ -56,3 +56,9 @@ sudo apt-get install -y postgresql-9.4 postgresql-server-dev-9.4 postgresql-plpy
 # sudo add-apt-repository -y ppa:pi-rho/dev
 # sudo apt-get update
 # sudo apt-get install -y tmux=1.9a-1~ppa1~t
+
+echo -e "\nVirtualbox stuff"
+sudo apt-get install -y libqt4-opengl
+cd /tmp
+wget "http://download.virtualbox.org/virtualbox/4.3.26/virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb"
+sudo dpkg -i virtualbox-4.3_4.3.26-98988\~Ubuntu\~raring_amd64.deb
