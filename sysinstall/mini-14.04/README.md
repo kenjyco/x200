@@ -87,6 +87,21 @@ Restart the SSH server
 
     % sudo service ssh restart
 
+#### Set GRUB boot loader to actually timeout
+
+    % sudo vim /etc/default/grub
+
+Comment out the `GRUB_HIDDEN_TIMEOUT*` lines and set `GRUB_TIMEOUT` to a
+reasonable value (like 5)
+
+    # GRUB_HIDDEN_TIMEOUT=0
+    # GRUB_HIDDEN_TIMEOUT_QUIET=true
+    GRUB_TIMEOUT=5
+
+Update grub
+
+    % sudo update-grub
+
 #### Setup PostgreSQL
 [psql 9.4]: http://www.postgresql.org/docs/9.4/static/app-psql.html
 [psycopg2]: http://initd.org/psycopg/
