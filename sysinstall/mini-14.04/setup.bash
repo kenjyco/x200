@@ -30,7 +30,7 @@ sudo apt-get install -y xinit xclip xbindkeys awesome
 echo -e "\nGUI tools"
 sudo apt-get install -y rxvt-unicode-256color feh scrot emelfm2 gparted
 sudo apt-get install -y recordmydesktop guvcview vlc audacity inkscape gimp
-# sudo apt-get install -y libreoffice wine virtualbox
+# sudo apt-get install -y libreoffice wine
 sudo apt-get install -y evince-gtk chromium-browser firefox pepperflashplugin-nonfree
 sudo update-pepperflashplugin-nonfree --install
 
@@ -57,8 +57,8 @@ sudo apt-get install -y postgresql-9.4 postgresql-server-dev-9.4 postgresql-plpy
 # sudo apt-get update
 # sudo apt-get install -y tmux=1.9a-1~ppa1~t
 
-echo -e "\nVirtualbox stuff"
-sudo apt-get install -y libqt4-opengl
-cd /tmp
-wget "http://download.virtualbox.org/virtualbox/4.3.26/virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb"
-sudo dpkg -i virtualbox-4.3_4.3.26-98988\~Ubuntu\~raring_amd64.deb
+# echo -e "\nVirtualbox stuff"
+# sudo apt-get install -y libqt4-opengl
+# cd /tmp
+# wget "http://download.virtualbox.org/virtualbox/4.3.26/virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb"
+# sudo dpkg -i virtualbox-4.3_4.3.26-98988\~Ubuntu\~raring_amd64.deb
