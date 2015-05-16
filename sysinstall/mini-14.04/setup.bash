@@ -31,7 +31,8 @@ echo -e "\nGUI tools"
 sudo apt-get install -y rxvt-unicode-256color feh scrot emelfm2 gparted
 sudo apt-get install -y recordmydesktop guvcview vlc audacity inkscape gimp
 # sudo apt-get install -y libreoffice wine
-sudo apt-get install -y evince-gtk chromium-browser firefox pepperflashplugin-nonfree
+sudo apt-get install -y evince-gtk okular
+sudo apt-get install -y chromium-browser firefox pepperflashplugin-nonfree
 sudo update-pepperflashplugin-nonfree --install
 
 echo -e "\nScreensaver stuff"
