@@ -1,5 +1,6 @@
-Cheat Sheet
-===========
+Beginner's Guide
+================
+
 Remember, when issuing a command at the prompt, press the `Enter` key after
 typing the command!
 
