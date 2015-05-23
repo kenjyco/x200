@@ -79,7 +79,7 @@ Uncomment and modify the following line
 
     PasswordAuthentication no
 
-Add an "AllowUsers" line with a comma-delimited list of users allowed to SSH in
+Add an "AllowUsers" line with a space-delimited list of users allowed to SSH in
 
     AllowUsers ken
 
