@@ -36,6 +36,7 @@ to
     %sudo   ALL=(ALL:All) NOPASSWD:ALL
 
 #### Disable waiting for network connection at boot
+
 Comment out any network interfaces that are not loopback (lo)
 
     % sudo vim /etc/network/interfaces
@@ -53,6 +54,7 @@ Restart `systemd-logind`
     % sudo restart systemd-logind
 
 #### Disable MOTD for console login and SSH login
+
 Edit the `pam.d/login` file
 
     % sudo vim /etc/pam.d/login
@@ -71,6 +73,25 @@ Comment out
     # session    optional     pam_motd.so  motd=/run/motd.dynamic noupdate
     # session    optional     pam_motd.so # [1]
 
+#### Create a `git` user for the system (SUPER OPTIONAL)
+
+Create the user with a limited shell
+
+    % sudo useradd -m -s /usr/bin/git-shell git
+    % sudo chmod 700 /home/git
+
+Add a `.ssh` directory with an empty `authorized_keys` file
+
+    % sudo mkdir /home/git/.ssh
+    % sudo chmod 700 /home/git/.ssh
+    % sudo touch /home/git/.ssh/authorized_keys
+    % sudo chmod 600 /home/git/.ssh/authorized_keys
+    % sudo chown -R git:git /home/git
+
+Add public SSH keys for users that will have access to the repositories
+
+    % sudo -u git vim /home/git/.ssh/authorized_keys
+
 #### Make SSH server only authenticate with SSH Keys
 
     % sudo vim /etc/ssh/sshd_config
@@ -81,7 +102,12 @@ Uncomment and modify the following line
 
 Add an "AllowUsers" line with a space-delimited list of users allowed to SSH in
 
-    AllowUsers ken
+    AllowUsers ken git
+
+> Note: Each user in the `AllowUsers` line will need to have at least one public
+> SSH key in the user's `~/.ssh/authorized_keys` file.
+>
+> Key pairs can be generated with **`ssh-keygen -C "short comment"`**
 
 Restart the SSH server
 
@@ -103,6 +129,7 @@ Update grub
     % sudo update-grub
 
 #### Setup PostgreSQL
+
 [psql 9.4]: http://www.postgresql.org/docs/9.4/static/app-psql.html
 [psycopg2]: http://initd.org/psycopg/
 [SQLAlchemy]: http://www.sqlalchemy.org/
