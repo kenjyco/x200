@@ -46,6 +46,9 @@ sudo apt-get install -y binutils-multiarch python-dev python-pip
 sudo pip install --upgrade pip
 sudo pip install virtualenv
 
+echo -e "\nRedis stuff"
+sudo apt-get install -y redis-server
+
 # See: http://www.postgresql.org/download/linux/ubuntu/
 echo -e "\nPostgreSQL stuff"
 sudo su -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
