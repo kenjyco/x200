@@ -4,7 +4,7 @@ Beginner's Guide
 Remember, when issuing a command at the prompt, press the `Enter` key after
 typing the command!
 
-#### Starting the GUI
+#### Logging in and starting the GUI (window manager)
 [1]: http://en.wikipedia.org/wiki/Graphical_user_interface
 [2]: http://en.wikipedia.org/wiki/Rxvt-unicode
 [3]: https://github.com/kenjyco/dotfiles/blob/master/x/xinitrc#L1
@@ -83,21 +83,19 @@ typing the command!
     - Press `Shift` + `Down` to create a new tab
     - Press `Shift` + `Right` or `Shift` + `Left` to move between open tabs
 - Press `Super` + `Enter` to open a new (small) urxvt window
-    - Use the `cd <dirname>` command or `cdd <dirname>` shortcut to move to the
+    - Use the `cd <dirname>` command or `cdd <dirname>` alias to move to the
       directory you want to work in
-    - Use any of the urxvt shortucts defined in [~/.shell/common.d/urxvt.sh][18]
+    - Use any of the urxvt aliases defined in [~/.shell/common.d/urxvt.sh][18]
       to open a new urxvt window of the desired size (`tall-wide`, `tall`,
       `skinny`, or `long`)
 
-> Note: The `Super` key is the key between `Ctrl` and `Alt` in the bottom left
-> area of the keyboard.
->
 > The default size for a new urxvt window can be set in the [~/.Xdefaults][19]
 > file.
 >
-> When we first move to a (project) directory and start a new urxvt window with
-> a shortcut, each new tab we open for that window will start in that project
-> directory.
+> When the `urxvt` command is called from a directory other than your `$HOME`
+> directory, each new tab we open for that window will start in that directory.
+> This is very useful when working on a project (where everything is contained
+> in a specific directory).
 
 #### Switching between windows in a workspace
 
