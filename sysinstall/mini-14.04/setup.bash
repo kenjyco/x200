@@ -46,8 +46,8 @@ sudo apt-get install -y binutils-multiarch python-dev python-pip
 sudo pip install --upgrade pip
 sudo pip install virtualenv
 
-echo -e "\nRedis stuff"
-sudo apt-get install -y redis-server
+echo -e "\nRedis and MongoDB stuff"
+sudo apt-get install -y redis-server mongodb
 
 # See: http://www.postgresql.org/download/linux/ubuntu/
 echo -e "\nPostgreSQL stuff"
