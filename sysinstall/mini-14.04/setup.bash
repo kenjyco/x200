@@ -26,7 +26,7 @@ sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 
 echo -e "\nXorg stuff"
 sudo apt-get install -y xserver-xorg-core xserver-xorg-video-intel
-sudo apt-get install -y xserver-xorg-input-kbd xserver-xorg-input-wacom
+sudo apt-get install -y xserver-xorg-input-kbd xserver-xorg-input-wacom xserver-xorg-input-synaptics
 sudo apt-get install -y xinit xclip xbindkeys awesome
 
 echo -e "\nGUI tools"
@@ -35,7 +35,7 @@ sudo apt-get install -y recordmydesktop guvcview vlc audacity inkscape gimp
 sudo apt-get install -y fonts-inconsolata
 # sudo apt-get install -y libreoffice wine
 sudo apt-get install -y evince-gtk okular
-sudo apt-get install -y chromium-browser firefox pepperflashplugin-nonfree
+sudo apt-get install -y chromium-browser firefox pepperflashplugin-nonfree icedtea-7-plugin
 sudo update-pepperflashplugin-nonfree --install
 
 echo -e "\nScreensaver stuff"
