@@ -46,6 +46,8 @@ echo -e "\nPython stuff"
 sudo apt-get install -y binutils-multiarch python-dev python-pip
 sudo pip install --upgrade pip
 sudo pip install virtualenv
+# Requirements for lxml
+sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
 
 echo -e "\nRedis and MongoDB stuff"
 sudo apt-get install -y redis-server mongodb
