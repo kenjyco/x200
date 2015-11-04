@@ -73,25 +73,6 @@ Comment out
     # session    optional     pam_motd.so  motd=/run/motd.dynamic noupdate
     # session    optional     pam_motd.so # [1]
 
-#### Create a `git` user for the system (SUPER OPTIONAL)
-
-Create the user with a limited shell
-
-    % sudo useradd -m -s /usr/bin/git-shell git
-    % sudo chmod 700 /home/git
-
-Add a `.ssh` directory with an empty `authorized_keys` file
-
-    % sudo mkdir /home/git/.ssh
-    % sudo chmod 700 /home/git/.ssh
-    % sudo touch /home/git/.ssh/authorized_keys
-    % sudo chmod 600 /home/git/.ssh/authorized_keys
-    % sudo chown -R git:git /home/git
-
-Add public SSH keys for users that will have access to the repositories
-
-    % sudo -u git vim /home/git/.ssh/authorized_keys
-
 #### Make SSH server only authenticate with SSH Keys
 
     % sudo vim /etc/ssh/sshd_config
@@ -130,34 +111,9 @@ Update grub
 
 #### Allow auto-mounting USB devices by label
 
-Create a rules file
-
-    % sudo vim /etc/udev/rules.d/11-media-by-label-auto-mount.rules
-
-Add the following to the rules file
-
-    KERNEL!="sd[a-z][0-9]", GOTO="media_by_label_auto_mount_end"
-    # Import FS infos
-    IMPORT{program}="/sbin/blkid -o udev -p %N"
-    # Get a label if present, otherwise specify one
-    ENV{ID_FS_LABEL}!="", ENV{dir_name}="%E{ID_FS_LABEL}"
-    ENV{ID_FS_LABEL}=="", ENV{dir_name}="usbhd-%k"
-    # Global mount options
-    ACTION=="add", ENV{mount_options}="relatime"
-    # Filesystem-specific mount options
-    ACTION=="add", ENV{ID_FS_TYPE}=="vfat|ntfs", ENV{mount_options}="$env{mount_options},utf8,gid=100,umask=002"
-    # Mount the device
-    ACTION=="add", RUN+="/bin/mkdir -p /media/%E{dir_name}", RUN+="/bin/mount -o $env{mount_options} /dev/%k /media/%E{dir_name}"
-    # Clean up after removal
-    ACTION=="remove", ENV{dir_name}!="", RUN+="/bin/umount -l /media/%E{dir_name}", RUN+="/bin/rmdir /media/%E{dir_name}"
-    # Exit
-    LABEL="media_by_label_auto_mount_end"
-
-Reload udev
-
-    % sudo udevadm control --reload-rules
-
 > See: http://www.axllent.org/docs/view/auto-mounting-usb-storage/
+>
+> Mounts as root in read-only mode.
 
 #### Setup PostgreSQL
 
