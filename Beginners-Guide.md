@@ -15,10 +15,6 @@ typing the command!
 - Type your **password** on the next line and hit `Enter`
 - Issue the `startx` command at the shell prompt to start the [GUI][1]
 
-> Note: When the GUI is started, a tabbed [urxvt][2] terminal window is
-> automatically launched for your convenience, in workspace 1. See the
-> [~/.xinitrc][3] file.
-
 #### Connecting to wifi
 
 - Issue the `wicd-curses` command at the shell prompt
@@ -36,7 +32,7 @@ typing the command!
 #### Starting a web browser
 [4]: http://en.wikipedia.org/wiki/Chromium_(web_browser)
 [5]: http://en.wikipedia.org/wiki/Firefox
-[6]: https://github.com/kenjyco/x200/blob/master/sysinstall/mini-14.04/setup.bash#L34
+[6]: https://github.com/kenjyco/x200/blob/master/sysinstall/mini-14.04/setup.bash#L38
 [7]: https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom
 [8]: https://addons.mozilla.org/En-us/firefox/addon/adblock-plus/
 
@@ -177,30 +173,6 @@ typing the command!
 > mounted, or if you are using a file that is on that filesystem. (You will see
 > an message that says "device is busy"). That is why we move to our `$HOME`
 > directory before unmounting.
-
-#### Downloading from YouTube
-[22]: http://en.wikipedia.org/wiki/MP3
-[20]: https://github.com/kenjyco/dotfiles/blob/master/bin/youtube
-[21]: https://github.com/rg3/youtube-dl
-
-- Visit https://www.youtube.com in a web browser and search for videos
-    - Right-click on a link to a video and select
-        - "Copy link address" (Chrome)
-        - "Copy Link Location" (Firefox)
-- In your terminal window call the `youtube` script with the **double-quoted**
-  link (use `Shift` + `Insert` to paste the link copied from the web browser)
-
-    ```
-    % youtube "https://www.youtube.com/watch?v=HAPr6iUBAsw"
-    ```
-- If you want to also create an [mp3 file][22], pass the `--audio` option to
-  `youtube`
-
-    ```
-    % youtube "https://www.youtube.com/watch?v=HAPr6iUBAsw" --audio
-    ```
-
-> Note: The [bin/youtube][20] script is a wrapper to [youtube-dl][21].
 
 #### Adjusting the volume
 [23]: http://en.wikipedia.org/wiki/Alsamixer
