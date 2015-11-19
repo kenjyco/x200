@@ -5,6 +5,7 @@ Remember, when issuing a command at the prompt, press the `Enter` key after
 typing the command!
 
 #### Logging in and starting the GUI (window manager)
+[0]: http://awesome.naquadah.org/doc/manpages/awesome.1.html
 [1]: http://en.wikipedia.org/wiki/Graphical_user_interface
 [2]: http://en.wikipedia.org/wiki/Rxvt-unicode
 [3]: https://github.com/kenjyco/dotfiles/blob/master/x/xinitrc#L1
@@ -14,6 +15,37 @@ typing the command!
 - Type your **username** at the login prompt and hit `Enter`
 - Type your **password** on the next line and hit `Enter`
 - Issue the `startx` command at the shell prompt to start the [GUI][1]
+
+> Note: The [awesome window manager][0], which gets launched when you `startx`
+> (see [~/.xinitrc][3]) has many keyboard shortcuts. The key between the `Ctrl`
+> and `Alt` keys on the bottom row is known as the **`Super`** key (or `Mod4`
+> in the docs).
+>
+> The `Super` key is often used in awesome's keyboard combos.
+
+![special-keys](super.png)
+
+#### Opening new urxvt tabs and windows
+[18]: https://github.com/kenjyco/dotfiles/blob/master/shell/common.d/urxvt.sh
+[19]: https://github.com/kenjyco/dotfiles/blob/master/x/Xdefaults#L2
+
+- Press `Super` + `Enter` to open a new (small) urxvt window
+    - Use the `cd <dirname>` command or `cdd <dirname>` alias to move to the
+      directory you want to work in
+    - Use any of the urxvt aliases defined in [~/.shell/common.d/urxvt.sh][18]
+      to open a new urxvt window of the desired size (`tall-wide`, `tall`,
+      `skinny`, or `long`)
+- When in an active urxvt terminal window
+    - Press `Shift` + `Down` to create a new tab
+    - Press `Shift` + `Right` or `Shift` + `Left` to move between open tabs
+
+> The default size for a new urxvt window can be set in the [~/.Xdefaults][19]
+> file.
+>
+> When the `urxvt` command is called from a directory other than your `$HOME`
+> directory, each new tab we open for that window will start in that directory.
+> This is very useful when working on a project (where everything is contained
+> in a specific directory).
 
 #### Connecting to wifi
 
@@ -40,6 +72,9 @@ typing the command!
     - Issue the `chromium-browser` command at the shell prompt
 - **Firefox**
     - Issue the `firefox` command at the shell prompt
+
+GUI programs like these **can also be started** from the **run prompt**, which
+appears at the top of your screen when you use `Super` + `r`.
 
 > Note: The web browsers [Chromium][4] and [Firefox][5] were installed when your
 > X200 was setup. See the [setup.bash][6] script.
@@ -70,28 +105,6 @@ typing the command!
 > If a path starts with `./` or `../` or the name of a directory in your current
 > directory, it is a relative path (`../` refers to the directory containing
 > your current directory, a.k.a. the "parent directory").
-
-#### Opening new urxvt tabs and windows
-[18]: https://github.com/kenjyco/dotfiles/blob/master/shell/common.d/urxvt.sh
-[19]: https://github.com/kenjyco/dotfiles/blob/master/x/Xdefaults#L2
-
-- When in an active urxvt terminal window
-    - Press `Shift` + `Down` to create a new tab
-    - Press `Shift` + `Right` or `Shift` + `Left` to move between open tabs
-- Press `Super` + `Enter` to open a new (small) urxvt window
-    - Use the `cd <dirname>` command or `cdd <dirname>` alias to move to the
-      directory you want to work in
-    - Use any of the urxvt aliases defined in [~/.shell/common.d/urxvt.sh][18]
-      to open a new urxvt window of the desired size (`tall-wide`, `tall`,
-      `skinny`, or `long`)
-
-> The default size for a new urxvt window can be set in the [~/.Xdefaults][19]
-> file.
->
-> When the `urxvt` command is called from a directory other than your `$HOME`
-> directory, each new tab we open for that window will start in that directory.
-> This is very useful when working on a project (where everything is contained
-> in a specific directory).
 
 #### Switching between windows in a workspace
 
