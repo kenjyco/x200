@@ -35,7 +35,7 @@
       the folder
     - use Python's `SimpleHTTPServer` module to "serve" your directory on port
       8080
-        - in the web browser, visit [localhost:8080][localhost:8080] and click
+        - in the web browser, visit [localhost:8080](http://localhost:8080) and click
           on the filename to view the animated gif
     ```
     % ls -1 *.png(.mm-10)
