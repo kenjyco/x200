@@ -44,6 +44,7 @@
     % convert -delay 120 -loop 0 feh_*757x1068*.png(.mm-10) my-animated-gif.gif
     % mkdir how-to-gifs
     % mv my-animated-gif.gif how-to-gifs
+    % cd how-to-gifs
     % python -m SimpleHTTPServer 8080
     ```
 
