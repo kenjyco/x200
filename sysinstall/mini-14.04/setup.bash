@@ -52,6 +52,9 @@ sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
 echo -e "\nRedis and MongoDB stuff"
 sudo apt-get install -y redis-server mongodb
 
+echo -e "\nJava Runtime stuff"
+sudo apt-get install -y default-jre
+
 # See: http://www.postgresql.org/download/linux/ubuntu/
 echo -e "\nPostgreSQL stuff"
 sudo su -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
