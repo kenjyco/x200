@@ -49,18 +49,21 @@ sudo pip install virtualenv
 # Requirements for lxml
 sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
 
-echo -e "\nRedis and MongoDB stuff"
-sudo apt-get install -y redis-server mongodb
+echo -e "\nRedis stuff"
+sudo apt-get install -y redis-server
+
+# echo -e "\nMongoDB stuff"
+# sudo apt-get install -y mongodb
 
 echo -e "\nJava Runtime stuff"
 sudo apt-get install -y default-jre
 
-# See: http://www.postgresql.org/download/linux/ubuntu/
-echo -e "\nPostgreSQL stuff"
-sudo su -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-wget -q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install -y postgresql-9.4 postgresql-server-dev-9.4 postgresql-plpython-9.4 postgresql-contrib-9.4
+# # See: http://www.postgresql.org/download/linux/ubuntu/
+# echo -e "\nPostgreSQL stuff"
+# sudo su -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+# wget -q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+# sudo apt-get update
+# sudo apt-get install -y postgresql-9.4 postgresql-server-dev-9.4 postgresql-plpython-9.4 postgresql-contrib-9.4
 
 # http://stackoverflow.com/questions/25940944
 # echo -e "\nTmux 1.9"
