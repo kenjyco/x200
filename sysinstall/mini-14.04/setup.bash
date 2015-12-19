@@ -58,6 +58,14 @@ sudo apt-get install -y redis-server
 echo -e "\nJava Runtime stuff"
 sudo apt-get install -y default-jre
 
+echo -e "\nDocker stuff"
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo su -c 'echo "deb https://apt.dockerproject.org/repo ubuntu-$(lsb_release -cs) main" > /etc/apt/sources.list.d/docker.list'
+sudo apt-get update
+sudo apt-get install -y linux-image-extra-$(uname -r) docker-engine
+sudo su -c 'curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
+sudo chmod +x /usr/local/bin/docker-compose
+
 # # See: http://www.postgresql.org/download/linux/ubuntu/
 # echo -e "\nPostgreSQL stuff"
 # sudo su -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
