@@ -43,7 +43,7 @@ sudo apt-get install -y xscreensaver xscreensaver-data xscreensaver-data-extra
 sudo apt-get install -y xscreensaver-gl xscreensaver-gl-extra
 
 echo -e "\nPython stuff"
-sudo apt-get install -y binutils-multiarch python-dev python-pip
+sudo apt-get install -y binutils-multiarch python-dev python-pip python3-dev python3-pip
 sudo pip install --upgrade pip
 sudo pip install virtualenv
 # Requirements for lxml
@@ -52,8 +52,8 @@ sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
 echo -e "\nRedis stuff"
 sudo apt-get install -y redis-server
 
-# echo -e "\nMongoDB stuff"
-# sudo apt-get install -y mongodb
+echo -e "\nMongoDB stuff"
+sudo apt-get install -y mongodb
 
 echo -e "\nJava Runtime stuff"
 sudo apt-get install -y default-jre

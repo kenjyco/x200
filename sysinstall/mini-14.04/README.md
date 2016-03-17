@@ -115,6 +115,28 @@ Update grub
 >
 > Mounts as root in read-only mode.
 
+#### Setup MongoDB
+
+Create an admin user (to administer other users and privleges)
+
+    % mongo
+    ...
+    > use admin
+    > db.addUser({user: "admin", pwd: "some.password", roles: ["userAdminAnyDatabase"]})
+    > exit
+
+Edit the default MongoDB config file
+
+    % sudo vim /etc/mongodb.conf
+
+Uncomment the 'auth' line to turn on authentication
+
+    auth = true
+
+Restart MongoDB
+
+    % sudo service mongodb restart
+
 #### Setup PostgreSQL
 
 [psql 9.4]: http://www.postgresql.org/docs/9.4/static/app-psql.html
