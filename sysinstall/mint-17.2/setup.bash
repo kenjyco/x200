@@ -8,7 +8,7 @@ sudo apt-get update || exit 1
 echo -e "\nsudo apt-get install -y ..."
 
 echo -e "\nAudio tools"
-sudo apt-get install -y libav-tools sox
+sudo apt-get install -y libav-tools sox rtmpdump
 
 echo -e "\nCommand-line tools"
 sudo apt-get install -y vim git zsh tmux curl pmount acpi colordiff htop tree ranger moc sysvbanner
