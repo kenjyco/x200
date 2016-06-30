@@ -22,7 +22,7 @@ sudo apt-get install -y exfat-fuse exfat-utils
 
 echo -e "\nCommand-line tools"
 sudo apt-get install -y vim git zsh tmux curl pmount acpi colordiff htop tree ranger moc sysvbanner
-sudo apt-get install -y openssh-server imagemagick wodim dvd+rw-tools syslinux nmap realpath mtools
+sudo apt-get install -y openssh-server imagemagick wodim dvd+rw-tools syslinux syslinux-utils nmap realpath mtools
 sudo apt-get install -y gtypist typespeed cmatrix elinks enscript vlock termsaver bsdgames httpie
 sudo apt-get install -y ack-grep
 sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
