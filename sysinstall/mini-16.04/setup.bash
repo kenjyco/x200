@@ -21,7 +21,7 @@ echo -e "\nFile-system tools"
 sudo apt-get install -y exfat-fuse exfat-utils
 
 echo -e "\nCommand-line tools"
-sudo apt-get install -y vim git zsh tmux curl pmount acpi colordiff htop tree ranger moc sysvbanner
+sudo apt-get install -y vim git zsh tmux curl pmount acpi colordiff htop tree ranger moc sysvbanner lolcat
 sudo apt-get install -y openssh-server imagemagick wodim dvd+rw-tools syslinux syslinux-utils nmap realpath mtools
 sudo apt-get install -y gtypist typespeed cmatrix elinks enscript vlock termsaver bsdgames httpie
 sudo apt-get install -y ack-grep
@@ -47,9 +47,12 @@ sudo apt-get install -y xscreensaver xscreensaver-data xscreensaver-data-extra
 sudo apt-get install -y xscreensaver-gl xscreensaver-gl-extra
 
 echo -e "\nPython stuff"
-sudo apt-get install -y binutils-multiarch gcc g++ python3-dev python3-venv
+sudo apt-get install -y binutils-multiarch gcc g++ python3-dev python3-venv python3-pip
 # Requirements for lxml
 sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
+# Install some system-wide packages
+sudo pip3 install asciinema
+sudo pip3 install uwsgi
 
 echo -e "\nRedis & MongodB stuff"
 sudo apt-get install -y redis-server mongodb
