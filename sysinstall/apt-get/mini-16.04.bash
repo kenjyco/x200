@@ -30,7 +30,7 @@ sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 echo -e "\nXorg stuff"
 sudo apt-get install -y xserver-xorg-core xserver-xorg-video-intel
 sudo apt-get install -y xserver-xorg-input-kbd xserver-xorg-input-wacom xserver-xorg-input-synaptics
-sudo apt-get install -y xinit xclip xbindkeys wmctrl awesome
+sudo apt-get install -y xinit xclip xbindkeys wmctrl awesome slim
 
 echo -e "\nGUI tools"
 sudo apt-get install -y rxvt-unicode-256color feh scrot emelfm2 gparted
