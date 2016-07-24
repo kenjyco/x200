@@ -1,20 +1,17 @@
 # Required
-[mini]: https://help.ubuntu.com/community/Installation/MinimalCD#A64-bit_PC_.28amd64.2C_x86_64.29
+[mini]: https://help.ubuntu.com/community/Installation/MinimalCD
 [apt-get]: https://help.ubuntu.com/community/AptGet/Howto
 [dotfiles]: https://github.com/kenjyco/dotfiles
 
-Once you complete the [Ubuntu Mini 14.04][mini] installation (from CD), fetch
-the `setup.bash` script and run it.
+Once you complete the [Ubuntu Mini 16.04][mini] installation (from CD), fetch
+the `mini-16.04.bash` script and run it.
 
-    % wget -q http://tr.im/mini1404
-    % bash ./mini1404
+    % wget -q https://raw.githubusercontent.com/kenjyco/x200/master/sysinstall/apt-get/mini-16.04.bash
+    % bash ./mini-16.04.bash
 
 > This will install specific software packages using the [apt-get][] package
 > manager and allow you to configure some things along the way. **Make sure you
 > have an internet connection!**
->
-> Also note that http://tr.im/mini1404 is a shortcut to to
-> https://raw.githubusercontent.com/kenjyco/x200/master/sysinstall/mini-14.04/setup.bash.
 
 # Optional
 
@@ -41,17 +38,21 @@ Comment out any network interfaces that are not loopback (lo)
 
     % sudo vim /etc/network/interfaces
 
-#### Disable laptop from sleeping on lid close
+#### Modify systemd settings
+
+> Disable laptop from sleeping on lid close and prevent tmux from getting killed
+> on logout.
 
     % sudo vim /etc/systemd/logind.conf
 
-Uncomment and modify the following line
+Uncomment and modify the following lines
 
+    KillUserProcesses=no
     HandleLidSwitch=ignore
 
 Restart `systemd-logind`
 
-    % sudo restart systemd-logind
+    % sudo systemctl restart systemd-logind
 
 #### Disable MOTD for console login and SSH login
 
