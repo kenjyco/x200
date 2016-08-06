@@ -42,6 +42,11 @@ sudo apt-get install -y chromium-browser firefox
 sudo apt-get install -y pepperflashplugin-nonfree icedtea-8-plugin
 sudo update-pepperflashplugin-nonfree --install
 
+echo -e "\nNetwork time stuff"
+sudo apt-get install -y ntp
+# Force time sync right now
+sudo service ntp stop && sudo ntpd -gq && sudo service ntp start
+
 echo -e "\nScreensaver stuff"
 sudo apt-get install -y xscreensaver xscreensaver-data xscreensaver-data-extra
 sudo apt-get install -y xscreensaver-gl xscreensaver-gl-extra
