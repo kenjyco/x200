@@ -27,7 +27,7 @@ sudo apt-get install -y rxvt-unicode-256color feh scrot emelfm2 gparted w3m w3m-
 sudo apt-get install -y recordmydesktop guvcview vlc audacity inkscape gimp
 sudo apt-get install -y fonts-inconsolata
 sudo apt-get install -y libreoffice wine
-sudo apt-get install -y evince-gtk okular
+sudo apt-get install -y evince-gtk okular retext
 sudo apt-get install -y chromium-browser
 sudo apt-get install -y pepperflashplugin-nonfree icedtea-8-plugin
 sudo update-pepperflashplugin-nonfree --install
