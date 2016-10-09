@@ -34,7 +34,7 @@ sudo apt-get install -y xserver-xorg-input-kbd xserver-xorg-input-wacom xserver-
 sudo apt-get install -y xinit xclip xbindkeys wmctrl awesome slim
 
 echo -e "\nGUI tools"
-sudo apt-get install -y rxvt-unicode-256color feh scrot emelfm2 gparted w3m w3m-image
+sudo apt-get install -y rxvt-unicode-256color feh scrot emelfm2 gparted w3m w3m-img
 sudo apt-get install -y recordmydesktop guvcview vlc audacity inkscape gimp
 sudo apt-get install -y fonts-inconsolata
 sudo apt-get install -y libreoffice wine
