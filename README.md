@@ -3,7 +3,7 @@ you should be comfortable using a keyboard to type letters, numbers, and some
 special symbols.
 
 [bg]: https://github.com/kenjyco/x200/blob/master/Beginners-Guide.md
-[1404]: https://github.com/kenjyco/x200/tree/master/sysinstall/mini-14.04
+[apt]: https://github.com/kenjyco/x200/tree/master/sysinstall/apt-get
 
 ## X200 Laptop
 
@@ -12,7 +12,7 @@ instructor/mentor/tutor should supply you with a laptop that is all set to use.
 The [beginners guide][bg] should help you out when you are on your own.
 
 > System install and configuration will not be covered but the process is
-> relatively straightforward. See [mini1404 setup][1404] and
+> relatively straightforward. See [apt-get setup][apt] and
 > [kenjyco/dotfiles](https://github.com/kenjyco/dotfiles) if you are curious.
 
 #### The X200 Keyboard
