@@ -118,25 +118,53 @@ Update grub
 
 #### Setup MongoDB
 
+Create a systemd service file for mongodb
+
+    % sudo vim /etc/systemd/system/mongodb.service
+
+Paste the following (then save/quit)
+
+	[Unit]
+	Description=High-performance, schema-free document-oriented database
+	After=network.target
+
+	[Service]
+	User=mongodb
+	ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
+
+	[Install]
+	WantedBy=multi-user.target
+
+Start mongodb and enable the service
+
+	% sudo systemctl start mongodb
+	% sudo systemctl enable mongodb
+
 Create an admin user (to administer other users and privleges)
 
     % mongo
     ...
     > use admin
-    > db.addUser({user: "admin", pwd: "some.password", roles: ["userAdminAnyDatabase"]})
+    > db.createUser({user: "admin", pwd: "some.password", roles: ["userAdminAnyDatabase", "root"]})
     > exit
 
 Edit the default MongoDB config file
 
     % sudo vim /etc/mongodb.conf
 
-Uncomment the 'auth' line to turn on authentication
+Uncomment the 'security:' section and enable authorization
 
-    auth = true
+    security:
+        authorization: enabled
 
 Restart MongoDB
 
-    % sudo service mongodb restart
+    % sudo systemctl restart mongodb
+
+Make sure you can login as your new admin user
+
+	% mongo -u "admin" -p "some.password" --authenticationDatabase "admin"
+	...
 
 #### Setup PostgreSQL
 

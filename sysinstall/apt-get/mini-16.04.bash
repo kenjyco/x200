@@ -61,7 +61,11 @@ sudo pip3 install asciinema
 sudo pip3 install uwsgi
 
 echo -e "\nRedis & MongodB stuff"
-sudo apt-get install -y redis-server mongodb
+sudo apt-get install -y redis-server
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
 
 # echo -e "\nJava Runtime stuff"
 # sudo apt-get install -y default-jre
