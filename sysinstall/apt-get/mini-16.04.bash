@@ -62,6 +62,8 @@ sudo pip3 install uwsgi
 
 echo -e "\nRedis & MongodB stuff"
 sudo apt-get install -y redis-server
+git clone https://github.com/sripathikrishnan/redis-rdb-tools /tmp/rdbtools
+cd /tmp/rdbtools && sudo python3 setup.py install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
 sudo apt-get update
