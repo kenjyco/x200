@@ -36,6 +36,8 @@ sudo pip install --upgrade pip
 sudo pip install virtualenv
 # Requirements for lxml
 sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
+# Requirements for jupyter
+sudo apt-get install -y g++
 
 echo -e "\nNoSQL stuff"
 sudo apt-get install -y redis-server mongodb
