@@ -57,8 +57,7 @@ sudo apt-get install -y binutils-multiarch gcc g++ python3-dev python3-venv pyth
 # Requirements for lxml
 sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
 # Install some system-wide packages
-sudo pip3 install asciinema
-sudo pip3 install uwsgi
+sudo pip3 install asciinema uwsgi twine
 
 echo -e "\nRedis & MongodB stuff"
 sudo apt-get install -y redis-server
