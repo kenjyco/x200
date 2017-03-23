@@ -24,6 +24,10 @@ the `mini-16.04.bash` script and run it.
 
     % sudo visudo
 
+Add a Cmnd alias
+
+    Cmnd_Alias SHUTDOWN_CMDS = /sbin/shutdown, /sbin/poweroff, /sbin/reboot,
+
 Change
 
     %sudo   ALL=(ALL:All) ALL
@@ -31,6 +35,7 @@ Change
 to
 
     %sudo   ALL=(ALL:All) NOPASSWD:ALL
+    student ALL=(ALL) NOPASSWD: SHUTDOWN_CMDS
 
 #### Disable waiting for network connection at boot
 
