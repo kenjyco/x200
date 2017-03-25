@@ -3,7 +3,7 @@
 [apt-get]: https://help.ubuntu.com/community/AptGet/Howto
 [dotfiles]: https://github.com/kenjyco/dotfiles
 
-Once you complete the [Ubuntu Mini 16.04][mini] installation (from CD), fetch
+Once you complete the [Ubuntu Mini 16.04][mini] installation, fetch
 the `mini-16.04.bash` script and run it.
 
     % wget -q https://raw.githubusercontent.com/kenjyco/x200/master/sysinstall/apt-get/mini-16.04.bash
