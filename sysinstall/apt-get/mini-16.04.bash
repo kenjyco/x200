@@ -54,6 +54,8 @@ sudo apt-get install -y xscreensaver-gl xscreensaver-gl-extra
 
 echo -e "\nPython stuff"
 sudo apt-get install -y binutils-multiarch gcc g++ python3-dev python3-venv python3-pip python3-setuptools
+# Requirements for dbus-python
+sudo apt-get install -y pkg-config libdbus-1-dev libdbus-glib-1-dev
 # Requirements for lxml
 sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
 # Install some system-wide packages
