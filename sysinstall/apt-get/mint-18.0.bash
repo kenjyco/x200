@@ -47,6 +47,8 @@ sudo apt-get install -y binutils-multiarch gcc g++ python3-dev python3-venv pyth
 sudo apt-get install -y pkg-config libdbus-1-dev libdbus-glib-1-dev
 # Requirements for lxml
 sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
+# Requirements for dryscrape
+sudo apt-get install -y qt5-default libqt5webkit5-dev xvfb build-essential
 # Install some system-wide packages
 sudo pip3 install asciinema uwsgi twine
 
