@@ -8,7 +8,7 @@ sudo apt-get update || exit 1
 echo -e "\nsudo apt-get install -y ..."
 
 echo -e "\nAudio tools"
-sudo apt-get install -y libav-tools sox rtmpdump
+sudo apt-get install -y libav-tools sox libsox-fmt-mp3 rtmpdump
 
 echo -e "\nFile-system tools"
 sudo apt-get install -y exfat-fuse exfat-utils

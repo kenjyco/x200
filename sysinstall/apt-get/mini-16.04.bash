@@ -12,7 +12,7 @@ sudo service wicd start
 wicd-curses
 
 echo -e "\nAudio tools"
-sudo apt-get install -y alsa-base alsa-utils alsa-firmware-loaders alsa-tools libav-tools sox rtmpdump
+sudo apt-get install -y alsa-base alsa-utils alsa-firmware-loaders alsa-tools libav-tools sox libsox-fmt-mp3 rtmpdump
 user=$(whoami)
 sudo usermod -a -G audio,video $user
 alsamixer
