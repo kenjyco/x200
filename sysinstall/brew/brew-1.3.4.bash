@@ -10,7 +10,7 @@ brew update
 brew cask install macdown xquartz
 brew install coreutils findutils wget python3 colordiff tree ranger typespeed imagemagick
 brew install dbus dbus-glib moc libav sox rtmpdump nmap tmux wmctrl enscript
-brew install bash bash-completion
+brew install bash bash-completion reattach-to-user-namespace
 brew install TomAnthony/brews/itermocil
 brew tap homebrew/versions
 brew install mongodb@3.2 redis@3.2
