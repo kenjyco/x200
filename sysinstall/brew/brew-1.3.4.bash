@@ -15,6 +15,12 @@ brew install TomAnthony/brews/itermocil
 brew tap homebrew/versions
 brew install mongodb@3.2 redis@3.2
 
+if [[ ! -d /data/db ]]; then
+    echo -e "\nCreating /data/db for MongoDB"
+    sudo mkdir -pv /data/db
+    sudo chown `id -u` /data/db
+fi
+
 if [[ -z $(brew services list | grep "dbus.*started") ]]; then
     echo -e "\nStarting Dbus service"
     brew services start dbus
