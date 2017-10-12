@@ -83,29 +83,6 @@ appears at the top of your screen when you use `Super` + `r`.
 > probably want to install the **AdBlock** extension/plugin ([for Chromium][7],
 > [for Firefox][8]).
 
-#### Navigating the filesystem
-[15]: http://en.wikipedia.org/wiki/Working_directory
-
-- Use the `pwd` command to show where you are in the filesystem (a.k.a. the
-  [current working directory][15])
-- Use the `ls` command to list the files and directories in your current
-  directory
-    - You can also pass a directory path to `ls` to list the contents of the
-      directory
-- Use the `cd` command to move to the `$HOME` directory of your user
-- Use the `cd <dirname>` command to move to into the specified directory
-- Use the `cd -` command to move to the directory you were in previously
-
-> Note: `/` is the "root" of your filesystem. All other files and directories
-> are nested inside `/` and the **path** to a file or directory may be
-> **absolute** or **relative** to the current working directory.
->
-> If a path starts with `/` or `~/`, it is an absolute path (`~/` refers to your
-> `$HOME` directory).
-> If a path starts with `./` or `../` or the name of a directory in your current
-> directory, it is a relative path (`../` refers to the directory containing
-> your current directory, a.k.a. the "parent directory").
-
 #### Switching between windows in a workspace
 
 - Use `Super` + `Tab` toggle between the current window and the most recently
