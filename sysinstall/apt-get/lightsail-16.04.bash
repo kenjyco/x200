@@ -11,7 +11,7 @@ echo -e "\nCommand-line tools"
 #  - vim, git, tmux, curl, openssh-server
 sudo apt-get install -y zsh colordiff htop tree ranger sysvbanner lolcat
 sudo apt-get install -y imagemagick syslinux syslinux-utils nmap realpath mtools
-sudo apt-get install -y gtypist typespeed cmatrix elinks enscript vlock termsaver bsdgames httpie
+sudo apt-get install -y gtypist typespeed cmatrix elinks enscript vlock termsaver bsdgames
 sudo apt-get install -y pandoc lynx
 sudo apt-get install -y ack-grep
 sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
