@@ -12,7 +12,6 @@ brew install coreutils findutils wget python3 colordiff tree ranger typespeed im
 brew install dbus dbus-glib moc libav sox rtmpdump nmap tmux wmctrl enscript
 brew install bash bash-completion reattach-to-user-namespace
 brew install TomAnthony/brews/itermocil
-brew tap homebrew/versions
 brew install mongodb@3.2 redis@3.2
 
 if [[ ! -d /data/db ]]; then
