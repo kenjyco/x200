@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[[ $(uname) != 'Darwin' ]] && exit 1
+
 if [[ ! -f /usr/local/bin/brew ]]; then
     echo -e "\nInstalling homebrew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || exit 1
@@ -7,9 +9,9 @@ fi
 
 echo -e "\nInstalling some tools with homebrew"
 brew update
-brew cask install macdown xquartz
+brew cask install macdown docker iterm2 robo-3t google-chrome slack vlc
 brew install coreutils findutils wget python3 colordiff tree ranger typespeed imagemagick
-brew install dbus dbus-glib moc libav sox rtmpdump nmap tmux wmctrl enscript pandoc
+brew install dbus dbus-glib moc libav sox rtmpdump nmap tmux watch ghostscript enscript pandoc lynx
 brew install bash bash-completion reattach-to-user-namespace
 brew install TomAnthony/brews/itermocil
 brew install mongodb@3.2 redis@3.2
