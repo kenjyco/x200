@@ -7,14 +7,55 @@ if [[ ! -f /usr/local/bin/brew ]]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || exit 1
 fi
 
-echo -e "\nInstalling some tools with homebrew"
+echo -e "\nGetting the list of packages already installed with brew"
+_installed=$(brew list -1)
+_brew_install_or_upgrade() {
+    for x in "$@"; do
+        echo "checking $x"
+        if [[ -z "$(echo -e "$_installed" | grep "$x")" ]]; then
+            brew install $x
+        else
+            brew upgrade $x 2>/dev/null
+        fi
+    done
+}
+
+echo -e "\nUpdating brew"
 brew update
-brew cask install macdown docker iterm2 robo-3t google-chrome slack vlc
-brew install coreutils findutils wget python3 colordiff tree ranger typespeed imagemagick
-brew install dbus dbus-glib moc libav sox rtmpdump nmap tmux watch ghostscript enscript pandoc lynx
-brew install bash bash-completion reattach-to-user-namespace
-brew install TomAnthony/brews/itermocil
-brew install mongodb@3.2 redis@3.2
+echo -e "\nInstalling some tools with homebrew"
+_brew_install_or_upgrade coreutils findutils wget python3 colordiff tree ranger typespeed imagemagick
+_brew_install_or_upgrade dbus dbus-glib moc libav sox rtmpdump nmap tmux watch ghostscript enscript pandoc lynx
+_brew_install_or_upgrade bash bash-completion reattach-to-user-namespace mongodb@3.2 redis@3.2
+[[ -z "$(echo -e "$_installed" | grep "itermocil")" ]] && brew install TomAnthony/brews/itermocil
+
+if [[ ! -d /Applications/iTerm.app/ ]]; then
+    echo -e "\n$ brew cask install iterm2"
+    brew cask install iterm2
+fi
+if [[ ! -d /Applications/MacDown.app/ ]]; then
+    echo -e "\n$ brew cask install macdown"
+    brew cask install macdown
+fi
+if [[ ! -d /Applications/Docker.app/ ]]; then
+    echo -e "\n$ brew cask install docker"
+    brew cask install docker
+fi
+if [[ ! -d /Applications/Slack.app/ ]]; then
+    echo -e "\n$ brew cask install slack"
+    brew cask install slack
+fi
+if [[ ! -d /Applications/VLC.app/ ]]; then
+    echo -e "\n$ brew cask install vlc"
+    brew cask install vlc
+fi
+if [[ ! -d "/Applications/Google Chrome.app/" ]]; then
+    echo -e "\n$ brew cask install google-chrome"
+    brew cask install google-chrome
+fi
+if [[ ! -d "/Applications/Robo 3T.app/" ]]; then
+    echo -e "\n$ brew cask install robo-3t"
+    brew cask install robo-3t
+fi
 
 if [[ ! -d /data/db ]]; then
     echo -e "\nCreating /data/db for MongoDB"
