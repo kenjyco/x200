@@ -40,8 +40,8 @@ sudo apt-get install -y fonts-inconsolata
 sudo apt-get install -y libreoffice wine
 sudo apt-get install -y evince-gtk okular retext
 sudo apt-get install -y chromium-browser firefox
-sudo apt-get install -y pepperflashplugin-nonfree icedtea-8-plugin
-sudo update-pepperflashplugin-nonfree --install
+# sudo apt-get install -y pepperflashplugin-nonfree icedtea-8-plugin
+# sudo update-pepperflashplugin-nonfree --install
 
 echo -e "\nNetwork time stuff"
 sudo apt-get install -y ntp
