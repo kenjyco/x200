@@ -18,7 +18,7 @@ sudo usermod -a -G audio,video $user
 alsamixer
 
 echo -e "\nFile-system tools"
-sudo apt-get install -y exfat-fuse exfat-utils
+sudo apt-get install -y exfat-fuse exfat-utils cryptsetup
 
 echo -e "\nCommand-line tools"
 sudo apt-get install -y vim git zsh tmux curl pmount acpi colordiff htop tree ranger moc moc-ffmpeg-plugin sysvbanner lolcat
