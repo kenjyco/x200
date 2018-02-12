@@ -26,6 +26,12 @@ echo -e "\nInstalling some tools with homebrew"
 _brew_install_or_upgrade coreutils findutils wget python3 colordiff tree ranger typespeed imagemagick
 _brew_install_or_upgrade dbus dbus-glib moc libav sox rtmpdump nmap tmux watch ghostscript enscript pandoc lynx
 _brew_install_or_upgrade bash bash-completion reattach-to-user-namespace mongodb@3.2 redis@3.2
+echo "checking yarn"
+if [[ -z "$(echo -e "$_installed" | grep yarn)" ]]; then
+    brew install yarn --without-node
+else
+    brew upgrade yarn --without-node 2>/dev/null
+fi
 [[ -z "$(echo -e "$_installed" | grep "itermocil")" ]] && brew install TomAnthony/brews/itermocil
 
 if [[ ! -d /Applications/iTerm.app/ ]]; then
