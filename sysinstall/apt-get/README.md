@@ -115,6 +115,70 @@ Update grub
 
     % sudo update-grub
 
+#### Encrypting and mounting an external drive
+
+Create the crypto LUKS partition, open it, then create an ext4 filesystem
+
+```
+% sudo cryptsetup --verbose --verify-passphrase luksFormat /dev/sdb1
+
+WARNING!
+========
+This will overwrite data on /dev/sdb1 irrevocably.
+
+Are you sure? (Type uppercase yes): YES
+Enter passphrase:
+Verify passphrase:
+Command successful.
+
+% sudo cryptsetup open /dev/sdb1 --type luks kylocrypt
+Enter passphrase for /dev/sdb1:
+
+% ls -l /dev/mapper
+total 0
+crw------- 1 root root 10, 236 Jan  2 01:28 control
+lrwxrwxrwx 1 root root       7 Feb 12 01:00 kylocrypt -> ../dm-0
+
+% sudo mkfs.ext4 -L KYLOCRYPT /dev/mapper/kylocrypt
+mke2fs 1.42.13 (17-May-2015)
+Creating filesystem with 3837064 4k blocks and 960992 inodes
+Filesystem UUID: 4d25aac6-2d9d-412c-83bb-72f9713b2142
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
+
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+```
+
+Mount the partition
+
+```
+% mkdir ~/kylomount
+
+% sudo mount /dev/mapper/kylocrypt ~/kylomount
+
+% sudo chown -R ${USER}:${USER} ~/kylomount
+```
+
+Unmount and close when finished
+
+```
+% sudo umount ~/kylomount
+
+% sudo cryptsetup close /dev/mapper/kylocrypt
+```
+
+Re-mount
+
+```
+% sudo cryptsetup open /dev/sdb1 --type luks kylocrypt
+Enter passphrase for /dev/sdb1:
+
+% sudo mount /dev/mapper/kylocrypt ~/kylomount
+```
+
 #### Allow auto-mounting USB devices by label
 
 > See: http://www.axllent.org/docs/view/auto-mounting-usb-storage/
