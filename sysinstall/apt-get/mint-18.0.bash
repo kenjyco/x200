@@ -23,7 +23,7 @@ sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 sudo apt-get install -y xclip xbindkeys wmctrl dkms awesome
 
 echo -e "\nGUI tools"
-sudo apt-get install -y rxvt-unicode-256color feh scrot emelfm2 gparted w3m w3m-img
+sudo apt-get install -y rxvt-unicode-256color feh scrot emelfm2 gparted w3m w3m-img gifsicle
 sudo apt-get install -y recordmydesktop guvcview vlc audacity inkscape gimp
 sudo apt-get install -y fonts-inconsolata
 sudo apt-get install -y libreoffice wine
