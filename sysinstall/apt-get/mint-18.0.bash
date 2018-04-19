@@ -50,7 +50,7 @@ sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
 # Requirements for dryscrape
 sudo apt-get install -y qt5-default libqt5webkit5-dev xvfb build-essential
 # Install some system-wide packages
-sudo pip3 install asciinema uwsgi twine
+sudo pip3 install uwsgi twine
 
 echo -e "\nRedis & MongodB stuff"
 sudo apt-get install -y redis-server
