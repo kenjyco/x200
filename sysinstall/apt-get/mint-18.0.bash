@@ -74,7 +74,7 @@ if [[ -z "$(grep docker -R /etc/apt/sources.list.d)" ]]; then
 fi
 sudo apt-get install -y docker-ce
 sudo usermod -aG docker ${USER}
-sudo su -c 'curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
+sudo su -c 'curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
 sudo chmod +x /usr/local/bin/docker-compose
 
 echo -e "\nYarn stuff"
