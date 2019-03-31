@@ -54,8 +54,7 @@ sudo pip3 install uwsgi twine
 
 echo -e "\nRedis & MongodB stuff"
 sudo apt-get install -y redis-server
-git clone https://github.com/sripathikrishnan/redis-rdb-tools /tmp/rdbtools
-cd /tmp/rdbtools && sudo python3 setup.py install
+sudo pip3 install rdbtools python-lzf
 if [[ -z "$(grep mongo -R /etc/apt/sources.list.d)" ]]; then
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
     echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
