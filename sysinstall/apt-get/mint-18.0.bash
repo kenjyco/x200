@@ -56,9 +56,11 @@ echo -e "\nRedis & MongodB stuff"
 sudo apt-get install -y redis-server
 git clone https://github.com/sripathikrishnan/redis-rdb-tools /tmp/rdbtools
 cd /tmp/rdbtools && sudo python3 setup.py install
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
-sudo apt-get update
+if [[ -z "$(grep mongo -R /etc/apt/sources.list.d)" ]]; then
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+    echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
+    sudo apt-get update
+fi
 sudo apt-get install -y mongodb-org
 
 # echo -e "\nJava Runtime stuff"
@@ -66,18 +68,23 @@ sudo apt-get install -y default-jre
 
 echo -e "\nDocker stuff"
 sudo apt-get install -y software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
-sudo apt-get update
+if [[ -z "$(grep docker -R /etc/apt/sources.list.d)" ]]; then
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+    sudo apt-get update
+fi
 sudo apt-get install -y docker-ce
 sudo usermod -aG docker ${USER}
 sudo su -c 'curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
 sudo chmod +x /usr/local/bin/docker-compose
 
 echo -e "\nYarn stuff"
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install -y yarn
+if [[ -z "$(grep yarn -R /etc/apt/sources.list.d)" ]]; then
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    sudo apt-get update
+fi
+sudo apt-get install -y yarn
 
 # # See: http://www.postgresql.org/download/linux/ubuntu/
 # echo -e "\nPostgreSQL stuff"
