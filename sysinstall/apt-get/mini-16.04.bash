@@ -56,6 +56,7 @@ echo -e "\nPython stuff"
 sudo apt-get install -y binutils-multiarch gcc g++ python3-dev python3-venv python3-pip python3-setuptools libssl-dev
 # Requirements for dbus-python
 sudo apt-get install -y pkg-config libdbus-1-dev libdbus-glib-1-dev
+sudo chown -R ${USER}:${USER} ~/.dbus ~/.cache/dconf
 # Requirements for lxml
 sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
 # Requirements for dryscrape
