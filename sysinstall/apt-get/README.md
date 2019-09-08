@@ -115,6 +115,12 @@ Update grub
 
     % sudo update-grub
 
+#### (Linux Mint only) Don't show contents of $HOME on desktop
+
+```
+% gsettings set org.nemo.preferences desktop-is-home-dir false
+```
+
 #### Encrypting and mounting an external drive
 
 Create the crypto LUKS partition, open it, then create an ext4 filesystem
