@@ -25,7 +25,7 @@ brew update
 echo -e "\nInstalling some tools with homebrew"
 _brew_install_or_upgrade coreutils findutils wget python3 colordiff tree ncdu ranger typespeed imagemagick git-flow-avh pyenv
 _brew_install_or_upgrade dbus dbus-glib moc libav sox rtmpdump nmap tmux watch ghostscript enscript pandoc lynx
-_brew_install_or_upgrade bash bash-completion reattach-to-user-namespace mongodb@3.2 redis@3.2
+_brew_install_or_upgrade bash bash-completion reattach-to-user-namespace redis@3.2
 echo "checking yarn"
 if [[ -z "$(echo -e "$_installed" | grep yarn)" ]]; then
     brew install yarn --without-node
@@ -62,11 +62,9 @@ if [[ ! -d "/Applications/Robo 3T.app/" ]]; then
     echo -e "\n$ brew cask install robo-3t"
     brew cask install robo-3t
 fi
-
-if [[ ! -d /data/db ]]; then
-    echo -e "\nCreating /data/db for MongoDB"
-    sudo mkdir -pv /data/db
-    sudo chown `id -u` /data/db
+if [[ ! -d "/Applications/MongoDB.app/" ]]; then
+    echo -e "\n$ brew cask install mongodb"
+    brew cask install mongodb
 fi
 
 if [[ -z $(brew services list | grep "dbus.*started") ]]; then
@@ -77,11 +75,6 @@ fi
 if [[ -z $(brew services list | grep "jack.*started") ]]; then
     echo -e "\nStarting jack (audio) service"
     brew services start jack
-fi
-
-if [[ -z $(brew services list | grep "mongodb@3.2.*started") ]]; then
-    echo -e "\nStarting MongoDB service"
-    brew services start mongodb@3.2
 fi
 
 if [[ -z $(brew services list | grep "redis@3.2.*started") ]]; then
