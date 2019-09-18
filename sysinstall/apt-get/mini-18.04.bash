@@ -53,7 +53,7 @@ sudo apt-get install -y xscreensaver xscreensaver-data xscreensaver-data-extra
 sudo apt-get install -y xscreensaver-gl xscreensaver-gl-extra
 
 echo -e "\nPython stuff"
-sudo apt-get install -y binutils-multiarch gcc g++ python3-dev python3-venv python3-pip python3-setuptools libssl-dev
+sudo apt-get install -y binutils-multiarch gcc g++ python3-dev python3-venv python3-pip python3-setuptools libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
 # Requirements for dbus-python
 sudo apt-get install -y pkg-config libdbus-1-dev libdbus-glib-1-dev
 sudo chown -R ${USER}:${USER} ~/.dbus ~/.cache/dconf
