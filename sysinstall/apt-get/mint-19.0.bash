@@ -43,13 +43,15 @@ sudo apt-get install -y xscreensaver-gl xscreensaver-gl-extra
 
 echo -e "\nPython stuff"
 sudo apt-get install -y binutils-multiarch gcc g++ python3-dev python3-venv python3-pip python3-setuptools libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+# Extra requirements for pyenv
+sudo apt-get install -y make build-essential zlib1g-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
 # Requirements for dbus-python
 sudo apt-get install -y pkg-config libdbus-1-dev libdbus-glib-1-dev
 sudo chown -R ${USER}:${USER} ~/.dbus ~/.cache/dconf
 # Requirements for lxml
-sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev zlib1g-dev
+sudo apt-get install -y libxml2 libxslt1.1 libxml2-dev libxslt1-dev
 # Requirements for dryscrape
-sudo apt-get install -y qt5-default libqt5webkit5-dev xvfb build-essential
+sudo apt-get install -y qt5-default libqt5webkit5-dev xvfb
 # Install some system-wide packages
 sudo pip3 install uwsgi twine
 
