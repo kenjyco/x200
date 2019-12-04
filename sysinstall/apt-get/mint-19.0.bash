@@ -95,6 +95,15 @@ if [[ -z "$(grep yarn -R /etc/apt/sources.list.d)" ]]; then
 fi
 sudo apt-get install -y yarn
 
+echo -e "\nSpeedtest stuff"
+sudo apt-get install -y gnupg1 dirmngr
+if [[ -z "$(grep ookla -R /etc/apt/sources.list.d)" ]]; then
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
+    echo "deb https://ookla.bintray.com/debian bionic main" | sudo tee /etc/apt/sources.list.d/speedtest.list
+    sudo apt-get update
+fi
+sudo apt-get install -y speedtest
+
 # # See: http://www.postgresql.org/download/linux/ubuntu/
 # echo -e "\nPostgreSQL stuff"
 # sudo su -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
