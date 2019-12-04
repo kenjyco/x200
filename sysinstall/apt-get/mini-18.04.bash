@@ -4,6 +4,10 @@
 echo -e "\nsudo apt-get update"
 sudo apt-get update || exit 1
 
+# Autoremove any package that "was automatically installed and is no longer required"
+echo -e "\nAutoremove.."
+sudo apt autoremove -y
+
 # Install software packages
 echo -e "\nsudo apt-get install -y ..."
 echo -e "\nWireless tools"
@@ -82,7 +86,7 @@ sudo apt-get install -y mongodb-org
 
 echo -e "\nDocker stuff"
 sudo apt-get install -y software-properties-common apt-transport-https ca-certificates
-if [[ -z "$(grep docker -R /etc/apt/sources.list.d)" ]]; then
+if [[ -z "$(grep docker /etc/apt/sources.list)" ]]; then
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
     sudo apt-get update
