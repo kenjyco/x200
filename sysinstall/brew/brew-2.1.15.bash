@@ -27,6 +27,11 @@ _brew_install_or_upgrade coreutils findutils wget python3 colordiff tree ncdu ra
 _brew_install_or_upgrade dbus dbus-glib moc libav sox rtmpdump nmap tmux watch ghostscript enscript pandoc lynx
 _brew_install_or_upgrade bash bash-completion reattach-to-user-namespace yarn redis@3.2
 [[ -z "$(echo -e "$_installed" | grep "itermocil")" ]] && brew install TomAnthony/brews/itermocil
+if [[ -z "$(echo -e "$_installed" | grep "speedtest")" ]]; then
+    brew tap teamookla/speedtest
+    brew update
+    brew install speedtest --force
+fi
 
 if [[ ! -d /Applications/iTerm.app/ ]]; then
     echo -e "\n$ brew cask install iterm2"
