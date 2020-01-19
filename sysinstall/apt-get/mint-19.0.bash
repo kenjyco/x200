@@ -111,13 +111,6 @@ sudo apt-get install -y speedtest
 # sudo apt-get update
 # sudo apt-get install -y postgresql-9.4 postgresql-server-dev-9.4 postgresql-plpython-9.4 postgresql-contrib-9.4
 
-# http://stackoverflow.com/questions/25940944
-# echo -e "\nTmux 1.9"
-# sudo apt-get install -y python-software-properties software-properties-common
-# sudo add-apt-repository -y ppa:pi-rho/dev
-# sudo apt-get update
-# sudo apt-get install -y tmux=1.9a-1~ppa1~t
-
 # echo -e "\nVirtualbox stuff"
 # sudo apt-get install -y libqt4-opengl
 # cd /tmp
