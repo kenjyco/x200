@@ -127,8 +127,15 @@ sudo apt-get install -y speedtest
 # sudo apt-get update
 # sudo apt-get install -y tmux=1.9a-1~ppa1~t
 
-# echo -e "\nVirtualbox stuff"
-# sudo apt-get install -y libqt4-opengl
-# cd /tmp
-# wget "http://download.virtualbox.org/virtualbox/4.3.26/virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb"
-# sudo dpkg -i virtualbox-4.3_4.3.26-98988\~Ubuntu\~raring_amd64.deb
+echo -e "\nVirtualbox stuff"
+if [[ -z "$(grep virtualbox -R /etc/apt/sources.list.d)" ]]; then
+    wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+    wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+    echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+    sudo apt-get update
+fi
+sudo apt-get install -y virtualbox-6.1
+sudo usermod -aG vboxusers ${USER}
+wget https://download.virtualbox.org/virtualbox/6.1.2/Oracle_VM_VirtualBox_Extension_Pack-6.1.2.vbox-extpack
+sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.2.vbox-extpack
+rm Oracle_VM_VirtualBox_Extension_Pack-6.1.2.vbox-extpack
