@@ -17,8 +17,7 @@ wicd-curses
 
 echo -e "\nAudio tools"
 sudo apt-get install -y alsa-base alsa-utils alsa-firmware-loaders alsa-tools ffmpeg sox libsox-fmt-mp3 rtmpdump
-user=$(whoami)
-sudo usermod -a -G audio,video $user
+sudo usermod -aG audio,video ${USER}
 alsamixer
 
 echo -e "\nFile-system tools"
