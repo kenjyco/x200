@@ -33,6 +33,7 @@ sudo apt-get install -y fonts-inconsolata
 sudo apt-get install -y libreoffice wine-stable
 sudo apt-get install -y evince okular retext
 sudo apt-get install -y chromium-browser
+sudo apt-get install -y ripperx lame
 # sudo apt-get install -y pepperflashplugin-nonfree icedtea-8-plugin
 # sudo update-pepperflashplugin-nonfree --install
 
