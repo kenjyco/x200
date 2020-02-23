@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[[ $(uname) != 'Darwin' ]] && exit 1
+[[ $(uname) != "Darwin" ]] && exit 1
 
 if [[ ! -f /usr/local/bin/brew ]]; then
     echo -e "\nInstalling homebrew"
