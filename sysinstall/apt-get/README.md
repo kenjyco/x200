@@ -199,21 +199,21 @@ Create a systemd service file for mongodb
 
 Paste the following (then save/quit)
 
-	[Unit]
-	Description=High-performance, schema-free document-oriented database
-	After=network.target
+    [Unit]
+    Description=High-performance, schema-free document-oriented database
+    After=network.target
 
-	[Service]
-	User=mongodb
-	ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
+    [Service]
+    User=mongodb
+    ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
 
-	[Install]
-	WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
 
 Start mongodb and enable the service
 
-	% sudo systemctl start mongodb
-	% sudo systemctl enable mongodb
+    % sudo systemctl start mongodb
+    % sudo systemctl enable mongodb
 
 Create an admin user (to administer other users and privleges)
 
@@ -238,8 +238,8 @@ Restart MongoDB
 
 Make sure you can login as your new admin user
 
-	% mongo -u "admin" -p "some.password" --authenticationDatabase "admin"
-	...
+    % mongo -u "admin" -p "some.password" --authenticationDatabase "admin"
+    ...
 
 #### Setup PostgreSQL
 
